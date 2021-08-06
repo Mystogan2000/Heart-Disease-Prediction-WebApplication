@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Result Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    
+     
+  
+      body{
+            background-color:white;
+             background-image:url('https://cdn2.vectorstock.com/i/1000x1000/40/26/heart-shaped-tree-with-green-leaves-vector-1744026.jpg'); 
+             background-repeat: no-repeat;
+             background-size:600px 1000px;
+             background-repeat: no-repeat;
+            }
+      
+
+    
+        
+    .center {
+        background-color:black;
+        width: 100%;
+        <!--border: 5px solid green;-->
+        text-align: center;
+        text-transform: uppercase;
+        color:white;
+        padding: 15px;
+        top : 50%;
+        transform : translateY(0%); 
+        margin-top:-20px;
+        margin-left:-10px;
+        
+       
+        <!--text-decoration: underline;-->
+      
+    }
+   
+       
+       .cen {
+         
+         
+         height: 300px;
+         background-color: #f2f2f2 ;
+         text-transform: uppercase;
+         color:black;
+         margin: auto;
+         margin-top:70px;
+         width:40%;
+         border: 3px ;
+         padding: 20px;
+         border-radius: 8px;
+         
+       }
+       
+       .cen h{
+           margin : 0;
+           padding : 0;
+           text-align: center;
+           left:27%;
+           font-size: .7cm;
+           position : relative;
+           top : 35%;
+           
+       
+       }
+       
+       .button {
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+       
+      .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          padding-top: 100px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        
+     
+        .modal-content {
+          background-color: #fefefe;
+          margin: auto;
+          padding: 30px;
+          border: 1px solid #888;
+          width: 30%;
+        }
+        
+        
+        .close {
+          color: #aaaaaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+   
+    
+    </style>
+</head>
+
+
+<body> 
+ 
+<div class ="center">
+  <h1 ><center> <i class="fa fa-heart" style="font-size:30px;color:red"></i> &nbspDiagnosis of heart disease</center></h1>
+</div>
+  
+<br>
+ 
+ <a href="home" class="button">Home</a>
+
+ &nbsp&nbsp&nbsp
+ 
+ <button id="myBtn" class="button">Summary</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Summary of Modals: </h3>
+    <p> Accuracy of Logistic Regression: 81.3%</p>
+    <p> Accuracy of Support Vector Machine: 80.3%</p>
+    <p> Accuracy of Naive Bayes:78.6</p>
+    <p> Accuracy of Decision Tree: 73.7</p>
+    <p> Accuracy of Random Forest: 80.3</p>
+   <!-- 
+   <p>Logistic Regression: {{ c1}}</p>
+    <p>Support Vector Machine: {{ c2 }}</p>
+    <p>Naive Bayes Classsifier: {{ c3 }}</p>
+    <p>Decision Tree:{{ c4 }} </p>
+    <p>Random Forest:{{ c5 }} </p>
+    <p> 1=True &nbsp 0 =False</p>
+     -->
+  </div>
+
+</div>
+ 
+ 
+ 
+ 
+ 
+ <!--<hr> -->
+<br> 
+<div class="cen">
+<p style="color:red;"><u>Result Sheet:</u></p>
+  {% if res[-1] == '0' %}
+    <h style="vertical-align: middle;"> " Heart   Disease   is  Absent "</h>
+  {% else %}
+    <h style="vertical-align: middle;"> " Heart   Disease   Found " </h>
+  {% endif %}
+
+  
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+</body>
+</html>
